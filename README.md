@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @Cloudy
+- 👋 Hi, I’m @Ragdoll
 - 👀 I’m interested in analytics, python, R and Linux!!!!
 - 🌱 I’m currently learning analytic, data sciences and AI
 - 💞️ I’m looking to collaborate on AI and analytics projects
