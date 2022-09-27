@@ -50,7 +50,7 @@ used by finance professionals
 ``` r
 qplot(data = msft_close,y = MSFT.Close)+geom_line(color='darkgreen')
 ```
-![](https://github.com/ragdoll/R-for-times-series/blob/main/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](https://github.com/ragdoll/R-for-times-series/blob/main/figure-gfm/unnamed-chunk-3-1.png)
 
 ``` r
 msft_close <- as.matrix(msft_close)
