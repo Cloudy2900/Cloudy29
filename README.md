@@ -50,8 +50,7 @@ used by finance professionals
 ``` r
 qplot(data = msft_close,y = MSFT.Close)+geom_line(color='darkgreen')
 ```
-
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](https://github.com/ragdoll/R-for-times-series/blob/main/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 ``` r
 msft_close <- as.matrix(msft_close)
@@ -170,12 +169,12 @@ distribution)
 What would happened if the return is not in normal distribution? Let’s
 explore whether our logreturn is in normal distribution  
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](https://github.com/ragdoll/R-for-times-series/blob/main/unnamed-chunk-11-1.png)<!-- -->
 very interesting density plot, look
 
     ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](https://github.com/ragdoll/R-for-times-series/blob/main/unnamed-chunk-12-1.png)<!-- -->
 
 ### Let generate same length of normal distribution and do a comparison: 
 
@@ -195,7 +194,7 @@ very interesting density plot, look
     ## 5 -0.010063789 MSFT.Close
     ## 6  0.034463350 MSFT.Close
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](https://github.com/ragdoll/R-for-times-series/blob/main/unnamed-chunk-13-1.png)<!-- -->
 Let do some check for log-return  
 
 ### Skewness check 
