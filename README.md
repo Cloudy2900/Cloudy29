@@ -407,7 +407,8 @@ then we can conclude that Microsoft share price follow random-walk.
 ### Testing for serial correlation
 
 We use autocorrelation coefficient test for our sample data  
-\$ρ\_{k} = \$ where γk = cov(yi, yi+k) and yi+k is the lag of period i  
+$ρ_{k}=\frac{γ_{k}}{γ_{0}} $
+where γk = cov(yi, yi+k) and yi+k is the lag of period i  
 
 The handy part is that there is an acf function which we can directly
 apply
@@ -424,7 +425,7 @@ serial correlation
 ### Testing for volatility cluster
 
 now let’s check for volatility cluster existed in log-return
-\$ρ\_{\|k\|} = \$
+$ρ_{|k|}=\frac{|γ_{k}|}{|γ_{0|}} $
 
 ``` r
 acf( abs(logret) )
