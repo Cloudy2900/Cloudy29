@@ -172,7 +172,7 @@ distribution)
 What would happened if the return is not in normal distribution? Let’s
 explore whether our logreturn is in normal distribution  
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 From the density plot, we can see that it is a sysmetric distribution.
 
