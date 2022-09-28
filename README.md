@@ -52,7 +52,7 @@ used by finance professionals
 qplot(data = msft_close,y = MSFT.Close)+geom_line(color='darkgreen')
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 ``` r
 msft_close <- as.matrix(msft_close)
@@ -178,7 +178,7 @@ From the density plot, we can see that it is a sysmetric distribution.
 
     ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 However, it is hard to check if this is normal distribution. Without
 clear understanding that our log-return follow normal distribution,  
@@ -202,7 +202,7 @@ Let check if this is normal distribution:
     ## 5 -0.010063789 MSFT.Close
     ## 6  0.034463350 MSFT.Close
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 It turn out that in our sample (actual log return), the peak is higher
 than random normal distribution.  
 
@@ -416,7 +416,7 @@ apply
 acf(logret)
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-23-1.png)<!-- -->
 the blue dash line are the 95% of confidence level  
 the acf showing less evidence that log-return presented with very strong
 serial correlation
@@ -430,7 +430,7 @@ now let’s check for volatility cluster existed in log-return
 acf( abs(logret) )
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 hmm, this is now telling a different story for volatility clustering.  
 Perhaps we should try to check if indeed it was due to volatility
 clustering by re-ordering the log-return randomly.  
@@ -440,7 +440,7 @@ shuffled_logret= logret[sample(1:nrow(logret)), ]
 acf( abs(shuffled_logret) )
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 Okay. Clearly by shuffling the log-return, acf function do not indicate
 the volatility clustering.  
 Now that we are sure that there is volatility clusters in our dataset,
