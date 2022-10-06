@@ -31,9 +31,9 @@ head(msft, 5)
 ```
 
     ##            MSFT.Open MSFT.High MSFT.Low MSFT.Close MSFT.Volume MSFT.Adjusted
-    ## 2007-01-03     29.91     30.25    29.40      29.86    76935100      21.68802
-    ## 2007-01-04     29.70     29.97    29.44      29.81    45774500      21.65171
-    ## 2007-01-05     29.63     29.75    29.45      29.64    44607200      21.52823
+    ## 2007-01-03     29.91     30.25    29.40      29.86    76935100      21.68803
+    ## 2007-01-04     29.70     29.97    29.44      29.81    45774500      21.65170
+    ## 2007-01-05     29.63     29.75    29.45      29.64    44607200      21.52824
     ## 2007-01-08     29.65     30.10    29.53      29.93    50220200      21.73886
     ## 2007-01-09     30.00     30.18    29.73      29.96    44636600      21.76065
 
@@ -60,10 +60,12 @@ tail(msft_close, 5)
 qplot(data = msft_close,y = MSFT.Close)+geom_line(color='darkgreen')
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->  
-\### Calculate log return for each day. log return is calculated by
-taking the natural log of the ending value divided by the beginning
-value  
+![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+### Calculate log return for each day.
+
+log return is calculated by taking the natural log of the ending value
+divided by the beginning value  
 In time series analysis, we use log-return for each period because it is
 time-additive/ time-consistence  
 daily log return sum up will equal to period return, hence it is widely
@@ -129,8 +131,7 @@ round(tail(logret.y,5),6)
     ## 2021-12-31   0.413496
     ## 2022-10-05  -0.299807
 
-  
-\### Value at Risk (VaR) and Expected shortfall (ES)
+### Value at Risk (VaR) and Expected shortfall (ES)
 
 Let’s ASSUME that our log-return follow a normal distribution,  
 we can now calculate the VaR and Expected shortfall  
@@ -232,12 +233,12 @@ head(logret_df)
 ```
 
     ##              MSFT.Close Norm.Distribution
-    ## 2007-01-04 -0.001675951       0.002100894
-    ## 2007-01-05 -0.005719107      -0.030818360
-    ## 2007-01-08  0.009736555      -0.001701003
-    ## 2007-01-09  0.001001803      -0.026871449
-    ## 2007-01-10 -0.010063789      -0.029957938
-    ## 2007-01-11  0.034463350      -0.011102905
+    ## 2007-01-04 -0.001675951       0.005238029
+    ## 2007-01-05 -0.005719107      -0.002109272
+    ## 2007-01-08  0.009736555      -0.001822841
+    ## 2007-01-09  0.001001803       0.007243838
+    ## 2007-01-10 -0.010063789      -0.003133866
+    ## 2007-01-11  0.034463350      -0.033349073
 
 ``` r
 # combine both set of time-series for plotting
@@ -410,8 +411,6 @@ cat("VaR is ", round(t_VaR,6), " and Expected Shortfall is ", round(t_ES,6))
 
     ## VaR is  -0.025287  and Expected Shortfall is  -0.041199
 
-  
-
 ### VaR and ES in normal distribution Simulation
 
 On the other hand, we can use the original mu and sig to get the same
@@ -433,8 +432,7 @@ cat("VaR is ", round(n_VaR,6), " and Expected Shortfall is ", round(n_ES,6))
 
     ## VaR is  -0.028972  and Expected Shortfall is  -0.036632
 
-  
-\### VaR and ES in actual historial log return
+### VaR and ES in actual historial log return
 
 ``` r
 a_VaR <- quantile(logret,alpha)
@@ -489,7 +487,8 @@ will followed by another above-average return.
 
 ### Testing for serial correlation
 
-We use autocorrelation coefficient test for our sample data  
+We use autocorrelation coefficient test for our sample data
+
 \$ρ\_{k}= \$
 
   
@@ -562,14 +561,16 @@ describes the irregular pattern of variation of an error term, or
 variable, in a statistical model.  
 
 we use GARCH distribution equation to a rescaled t distribution
-GARCH(1,1)-t model:  
+GARCH(1,1)-t model:
 
 $r_{t}=a_{0}+{\sqrt{h_{t}\varepsilon_{t}}}$ (mean equation)  
 $h_{t}=a_{0}+\beta_{1}h_{t-1}+a_{1}\varepsilon^{2}_{t-1}$ (variance
 equation)  
 $\varepsilon_{t}$ \~ \$t(v) / \$ (distribution equation)  
 
-Notation:  $r_{t}$ is the return series with time varying volatility  
+Notation:  
+
+$r_{t}$ is the return series with time varying volatility  
 $a_{0}$ is its expected return (typically close to 0)  
 $\sqrt{h_{t}\varepsilon_{t}}$ is the unexpected return  
 $h_{t}$ is the predicatable variance, changing over time  
@@ -698,7 +699,7 @@ fit.garch.t
     ## 4    50     40.32       0.8067
     ## 
     ## 
-    ## Elapsed time : 0.503015
+    ## Elapsed time : 0.4826
 
   
 next, save fitted values  
