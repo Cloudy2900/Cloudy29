@@ -60,7 +60,7 @@ tail(msft_close, 5)
 qplot(data = msft_close,y = MSFT.Close)+geom_line(color='darkgreen')
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ### Calculate log return for each day.
 
@@ -211,7 +211,7 @@ A dot plot for log-return
 
     ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->  
+![](figure-gfm/unnamed-chunk-13-1.png)<!-- -->  
 By visual, we notice that log-return are symmetric.  
 However, it is hard to check if this is normal distribution. Without
 clear picture whether Microsoft’s log-return follow normal
@@ -247,7 +247,7 @@ st_logret_df <- stack(logret_df)
 ggplot(data = st_logret_df, aes(x=values,  fill=ind)) + geom_density(alpha=0.3)
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->  
+![](figure-gfm/unnamed-chunk-14-1.png)<!-- -->  
 From the visual, it turned up that sample (actual log return), are
 having higher peak and longer tail than random normal distribution.  
 
@@ -501,7 +501,7 @@ apply in r.
 acf(logret)
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->  
+![](figure-gfm/unnamed-chunk-24-1.png)<!-- -->  
 the blue dash line are the 95% of confidence level  
 the acf showing less evidence that log-return presented with some level
 of serial correlation.
@@ -518,7 +518,7 @@ now let’s check for volatility cluster existed in log-return
 acf( abs(logret) )
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
   
 For the volatility clusters, it is complete different story.  
@@ -533,7 +533,7 @@ shuffled_logret= logret[sample(1:nrow(logret)), ]
 acf( abs(shuffled_logret) )
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->  
+![](figure-gfm/unnamed-chunk-26-1.png)<!-- -->  
 Clearly by shuffling the log-return, acf function do not indicate the
 volatility clustering.  
   
@@ -725,13 +725,13 @@ captured volatility clustering in data
 acf(save1$z)
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->  
+![](figure-gfm/unnamed-chunk-29-1.png)<!-- -->  
 
 ``` r
 acf(abs(save1$z))
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-30-1.png)<!-- -->  
+![](figure-gfm/unnamed-chunk-30-1.png)<!-- -->  
 
 we can now Calculate VaR and ES from GARCH model by bootstrapping from
 the fitted “E” (standard residual)  
@@ -886,7 +886,7 @@ ggplot(logret2021, aes(x = date, y = `logret`)) +
   geom_col(color="blue")
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-37-1.png)<!-- -->  
+![](figure-gfm/unnamed-chunk-37-1.png)<!-- -->  
 From the rolling GARCH model, we can extract the VaR for visualization  
 
 ``` r
@@ -898,7 +898,7 @@ ggplot(garch_VaR_forecast) +
   geom_line(aes(x = date, y = `alpha(5%)`), color="red")
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-38-1.png)<!-- -->  
+![](figure-gfm/unnamed-chunk-38-1.png)<!-- -->  
 Lastly, we can combine both chart for comparison.  
 
 ``` r
@@ -909,7 +909,7 @@ ggplot(graph) +
   geom_col(aes(x = date, y = `logret`),color="blue")
 ```
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-39-1.png)<!-- -->
+![](figure-gfm/unnamed-chunk-39-1.png)<!-- -->
 
 ``` r
 head(graph)
