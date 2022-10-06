@@ -205,7 +205,7 @@ distribution
 
 ### Exploratory Data Analysis 
 
-![](Financial_Risk_Project_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->  
+![](figure-gfm/unnamed-chunk-12-1.png)<!-- -->  
 From the density plot, we can see that it is a symmetric distribution.  
 A dot plot for log-return  
 
