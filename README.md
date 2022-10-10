@@ -7,7 +7,7 @@ Ragdoll99
 
   
 This project is to showcase time series data handling in R and financial
-risk management approach for estimating share price value-at-risk and
+risk management with statistical approach for estimating share price value-at-risk and
 Expected shortfall.  
 
 ``` r
