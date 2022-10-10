@@ -587,9 +587,11 @@ error term, or variable, in a statistical model.
 We will use GARCH distribution equation to a re-scaled t distribution
 GARCH(1,1)-t model:
 
-$r_{t}=a_{0}+{\sqrt{h_{t}\varepsilon_{t}}}$ (mean equation)  
+$r_{t}=a_{0}+{\sqrt{h_{t}\varepsilon_{t}}}$ (mean equation)
+
 $h_{t}=a_{0}+\beta_{1}h_{t-1}+a_{1}\varepsilon^{2}_{t-1}$ (variance
-equation)  
+equation)
+
 $\varepsilon_{t}$ \~ $t(v) / \sqrt{v/v-2}$ (distribution equation)  
 
 Notation:  
