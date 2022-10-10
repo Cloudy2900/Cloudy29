@@ -279,13 +279,13 @@ Before proceed further, let’s do some check for the sample log-return
 ### Skewness check
 
 We use skewness test to check if our log-return follow normal
-distribution  
+distribution
 
-$\tilde{\mu }_{3}=\frac{\sum_{i}^{N}\left(X_{i}-\bar{X}\right)^{3}}{(N-1)*\sigma^{3}}$  
+$\mu_{3}=\frac{{\sum_{i}}^{N}\left(X_{i}-\bar{X}\right)^{3}}{(N-1)\sigma^{3}}$  
 
 In simple term, we can conclude that if the coefficient of skewness is
 0, data is symmetric, else it is left-skewed or right-skewed  
-0(symmetric), -ve(left-skewed), +ve(right-skewed)  
+0 (symmetric), -ve(left-skewed), +ve(right-skewed)  
 
 ``` r
 library(moments)
